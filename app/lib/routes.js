@@ -17,8 +17,13 @@ Router.route("/addDocument", function() {
   this.render("addDocument");
 });
 
-Router.route("/rooms", function() {
-  this.render("rooms");
+Router.route("/rooms", {
+  waitOn: function() {
+    return Meteor.subscribe("cleanRooms");
+  },
+  action: function() {
+    this.render("rooms");
+  }
 });
 
 Router.route("/room/:slug", {
