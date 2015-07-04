@@ -22,17 +22,20 @@ Meteor.methods({
         }
       }
     });
-  }
-});
-
-Meteor.users.find({"status.online": true}).observe({
-  removed: function(id) {
-    Meteor.users.update({_id: id}, {
+  },
+  leaveRoom: function(userId) {
+    Meteor.users.update({_id: userId}, {
       $set: {
         field: {
           currentRoom: null
         }
       }
     });
+  }
+});
+
+Meteor.users.find({"status.online": true}).observe({
+  removed: function(id) {
+    Meteor.call("leaveRoom", id);
   }
 });

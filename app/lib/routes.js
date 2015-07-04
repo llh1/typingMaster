@@ -2,6 +2,13 @@ Router.configure({
   layoutTemplate: "main"
 });
 
+Router.onBeforeAction(function() {
+  if(Meteor.userId()) {
+    Meteor.call("leaveRoom", Meteor.userId());
+  }
+  this.next(); 
+}, {except: ["room"]});
+
 Router.route("/", function() {
   this.render("play");
 });
@@ -15,6 +22,7 @@ Router.route("/rooms", function() {
 });
 
 Router.route("/room/:slug", {
+  name: "room",
   onBeforeAction: function() {
     if(!Meteor.userId()) {
       this.render("rooms", {data: {
