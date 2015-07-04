@@ -1,7 +1,8 @@
 <template name="room">
   <h2>{{room.name}}</h2>
+  <button id="start-button">I'm ready to start!</button>
 
-  <h2>Players in the room</h2>
+  <h2>{{roomUsersCount}} Players in the room</h2>
   {{#each roomUsers}}
     {{> roomUser}}
   {{/each}}
