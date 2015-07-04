@@ -25,8 +25,7 @@ Router.route("/room/:slug", {
     }
   },
   waitOn: function() {
-    var room = Rooms.findOne({slug: this.params.slug});
-    return Meteor.subscribe("joinRoom", room._id);
+    return Meteor.subscribe("joinRoom", this.params.slug);
   },
   data: function() {
     return {room: Rooms.findOne({slug: this.params.slug})};
