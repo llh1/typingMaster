@@ -10,3 +10,5 @@ accounts-ui
 accounts-password
 mizzao:user-status
 twbs:bootstrap
+less
+mizzao:jquery-ui

@@ -4,20 +4,31 @@
 </head>
 
 <body>
-  <h1>Typing Master!</h1>
-  {{> loginButtons}}
-  <ul>
-    <li>
-      <a href="/">Play</a>
-    </li>
-    <li>
-      <a href="/addDocument">Add a new document</a>
-    </li>
-    <li>
-      <a href="/rooms">Create or join a game room</a>
-    </li>
-  </ul>
+  <header>
+    <h1>Typing Master!</h1>
+    <div id="header-container">
+      <img src="images/typing-master-logo.png" id="logo" />
+      <nav>
+        <ul>
+          <li id="sign-in">
+            {{> loginButtons}}
+          </li>
+          <li id="add-text">
+            <a href="/addDocument">Add text</a>
+          </li>
+          <li id="practice">
+            <a href="/">Practice</a>
+          </li>
+          <li id="join-a-game">
+            <a href="/rooms">Join a game</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-  {{> yield}}
+  <div id="content">
+    {{> yield}}
+  </div>
 </body>
 </template>

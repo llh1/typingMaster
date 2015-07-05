@@ -1,0 +1,121 @@
+body {
+  
+}
+
+h1 {
+  display: none;
+}
+
+header {
+  background-color: #bfc4d0;
+
+  #header-container {
+    width: 716px;
+    margin: 0 auto;
+    height: 380px;
+  }
+
+  #logo {
+    display: none;
+    position: relative;
+    top: -25px;
+  }
+
+  nav {
+    position: relative;
+    top: -300px;
+    float: right;
+    height: 200px;
+
+    ul {
+      list-style-type: none;
+    }
+
+    li>a {
+      text-indent: -9000px;
+    }
+
+    a:hover {
+      opacity: 0.7;
+    }
+
+    #sign-in {
+      position: relative;
+      left: -50px;
+      top: -50px;
+      width: 130px;
+      height: 130px;
+
+      #login-buttons {
+        & .login-link-and-dropdown-list>a {
+          display: block;
+          width: 130px;
+          height: 130px;
+          text-indent: -9000px;
+        }
+      
+        #login-sign-in-link {
+          background-image: url("images/signin.png");
+        }
+
+        #login-name-link {
+          background-image: url("images/loggedin.png");
+        }
+      }
+    }
+
+    #add-text {
+      position: relative;
+      left: 68px;
+      top: -143px;
+      width: 150px;
+      height: 150px;
+
+      a {
+        width: 150px;
+        height: 150px;
+        display: none;
+        background-image: url("images/addtext.png");
+      }
+    }
+
+    #practice {
+      position: relative;
+      left: 230px;
+      top: -220px;
+      width: 131px;
+      height: 128px;
+
+      a {
+        background-image: url("images/practice.png");
+        width: 131px;
+        height: 128px;
+        display: none;
+      }
+    }
+
+    #join-a-game {
+      position: relative;
+      left: 85px;
+      top: -264px;
+      width: 172px;
+      height: 174px;
+
+      a {
+        background-image: url("images/joinagame.png");
+        width: 172px;
+        height: 174px;
+        display: none;
+      }
+    }
+  }
+}
+
+#content {
+  width: 50%;
+  margin: 0 auto;
+
+  .label {
+    font-size: 14px;
+  }
+}
