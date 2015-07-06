@@ -1,4 +1,13 @@
 <template name="play">
   <h2>Play</h2>
-  <p>{{randomDocument.text}}</p>
+  <p>
+  <span class="correct">{{correctlyTypedDocument}}</span>
+  {{remainingDocument}}
+  </p>
+  {{> typeBox}}
+</template>
+
+
+<template name="typeBox">
+  <input type="text" id="type-box" />
 </template>

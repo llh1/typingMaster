@@ -9,8 +9,18 @@ Router.onBeforeAction(function() {
   this.next(); 
 }, {except: ["room"]});
 
-Router.route("/", function() {
-  this.render("play");
+Router.route("/", {
+  data: function() {
+    var doc = Documents.find({random: {$near: [Math.random(), 0]}}, {limit: 1}).fetch()[0];
+    if(doc) {
+      Session.set("document", doc.text);
+      Session.set("typedDocument", "");
+    }
+    return {document: doc};
+  },
+  action: function() {
+    this.render("play");
+  }
 });
 
 Router.route("/addDocument", function() {
